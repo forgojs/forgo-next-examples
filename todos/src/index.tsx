@@ -38,7 +38,7 @@ type ItemProps = {
 };
 
 export const TodoListItem = (props: ItemProps) => {
-  return new webjsx.Component({
+  return new webjsx.Component<ItemProps>({
     name: "todo-list-item",
     render(props, component) {
       return <div>{props.text}</div>;
