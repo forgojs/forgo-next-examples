@@ -1,6 +1,6 @@
 # examples
 
-Examples using Forgo.
+Examples using WebJsx.
 
 Three examples are available:
 

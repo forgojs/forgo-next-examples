@@ -8,6 +8,7 @@ export const TodoList = () => {
 
   return new webjsx.Component({
     name: "todo-list",
+    attachShadow: false,
     render(_props, component) {
       function onTodoAdd(text: string) {
         todos.push(text);
@@ -19,15 +20,28 @@ export const TodoList = () => {
 
       return (
         <div>
-          <h1>Forgo Todos</h1>
-          <ul>
+          <h1>WebJsx Todos</h1>
+          <section>
             {todos.map((t) => (
-              <li>{t}</li>
+              <TodoListItem text={t} />
             ))}
-          </ul>
+          </section>
           <AddTodo onAdd={onTodoAdd} />
         </div>
       );
+    },
+  });
+};
+
+type ItemProps = {
+  text: string;
+};
+
+export const TodoListItem = (props: ItemProps) => {
+  return new webjsx.Component({
+    name: "todo-list-item",
+    render(props, component) {
+      return <div>{props.text}</div>;
     },
   });
 };
