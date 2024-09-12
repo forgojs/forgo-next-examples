@@ -1,5 +1,5 @@
 {
-  "name": "forgo-next-examples",
+  "name": "webjsx-examples-todos",
   "private": true,
   "dependencies": {
     "forgo-next": "^0.0.6"
