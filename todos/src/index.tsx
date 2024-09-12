@@ -1,17 +1,19 @@
-import * as forgo from "forgo";
-import { mount, rerender, Component } from "forgo";
-import type { ForgoNewComponentCtor } from "forgo";
+import * as forgo from "forgo-next";
 
 /*
   The main Todo List component
 */
-export const TodoList: ForgoNewComponentCtor = () => {
+export const TodoList = () => {
   let todos: string[] = [];
 
-  return new Component({
+  return new forgo.Component({
+    name: "todo-list",
     render(_props, component) {
       function onTodoAdd(text: string) {
         todos.push(text);
+        console.log({
+          todos,
+        });
         component.update();
       }
 
@@ -20,29 +22,12 @@ export const TodoList: ForgoNewComponentCtor = () => {
           <h1>Forgo Todos</h1>
           <ul>
             {todos.map((t) => (
-              <TodoListItem text={t} />
+              <li>{t}</li>
             ))}
           </ul>
           <AddTodo onAdd={onTodoAdd} />
         </div>
       );
-    },
-  });
-};
-
-/*
-  Display a Todo list item
-*/
-interface TodoListItemProps {
-  text: string;
-}
-
-export const TodoListItem: ForgoNewComponentCtor<TodoListItemProps> = (
-  _props
-) => {
-  return new Component({
-    render(props) {
-      return <li>{props.text}</li>;
     },
   });
 };
@@ -54,7 +39,8 @@ interface AddTodoProps {
   onAdd: (text: string) => void;
 }
 
-const AddTodo: ForgoNewComponentCtor<AddTodoProps> = (props) => {
+const AddTodo = (props: AddTodoProps) => {
+  console.log({ a: "lalala", props });
   const input: { value?: HTMLInputElement } = {};
 
   const saveTodo = () => {
@@ -67,17 +53,18 @@ const AddTodo: ForgoNewComponentCtor<AddTodoProps> = (props) => {
   };
 
   // Add the todo when enter is pressed
-  const onKeyPress = (e: KeyboardEvent) => {
+  const onKeyDown = (e: KeyboardEvent) => {
     if (e.key === "Enter") {
       saveTodo();
     }
   };
 
-  return new Component({
+  return new forgo.Component({
+    name: "add-todo",
     render() {
       return (
         <div>
-          <input onkeypress={onKeyPress} type="text" ref={input} />
+          <input onkeydown={onKeyDown} type="text" ref={input} />
           <button onclick={saveTodo}>Add me!</button>
         </div>
       );
@@ -94,5 +81,5 @@ function ready(fn: any) {
 }
 
 ready(() => {
-  mount(<TodoList />, document.getElementById("root"));
+  forgo.mount(<TodoList />, document.getElementById("root"));
 });
