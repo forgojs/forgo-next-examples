@@ -1,4 +1,4 @@
-import * as forgo from "forgo-next";
+import * as webjsx from "webjsx";
 
 /*
   The main Todo List component
@@ -6,7 +6,7 @@ import * as forgo from "forgo-next";
 export const TodoList = () => {
   let todos: string[] = [];
 
-  return new forgo.Component({
+  return new webjsx.Component({
     name: "todo-list",
     render(_props, component) {
       function onTodoAdd(text: string) {
@@ -59,7 +59,7 @@ const AddTodo = (props: AddTodoProps) => {
     }
   };
 
-  return new forgo.Component({
+  return new webjsx.Component({
     name: "add-todo",
     render() {
       return (
@@ -81,5 +81,5 @@ function ready(fn: any) {
 }
 
 ready(() => {
-  forgo.mount(<TodoList />, document.getElementById("root"));
+  webjsx.mount(<TodoList />, document.getElementById("root"));
 });

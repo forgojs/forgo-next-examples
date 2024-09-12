@@ -2,7 +2,7 @@
   "name": "webjsx-examples-todos",
   "private": true,
   "dependencies": {
-    "forgo-next": "^0.0.6"
+    "webjsx": "^0.0.1"
   },
   "type": "module",
   "scripts": {
