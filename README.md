@@ -2,10 +2,7 @@
 
 Examples using WebJsx.
 
-Three examples are available:
-
-- Timer
-- Routing
+These examples are available:
 - Todos
 
 # How to Run
@@ -13,11 +10,7 @@ Three examples are available:
 Go to the example directory you want:
 
 ```sh
-cd timer
-# OR
 cd todos
-# OR
-cd routing
 ```
 
 Install dependencies first.
