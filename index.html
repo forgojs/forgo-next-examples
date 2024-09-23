@@ -4,51 +4,130 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WebJsx Examples</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Montserrat:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-pVnHc6F7xB1ybFRuXgzB68zGKGXG8rQ5u6WheFqA8pIu2Y4cO9A9ZVYh8D1+bE0iB2HfVpGxl1huj3Qx9bYw1g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <style>
-      body {
-        font-family: Arial, sans-serif;
+      /* Reset some default styles */
+      * {
+        box-sizing: border-box;
         margin: 0;
         padding: 0;
-        background-color: #f4f4f4;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
         color: #333;
+        min-height: 100vh;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100vh;
-      }
-      .container {
-        max-width: 800px;
-        background-color: white;
         padding: 20px;
-        border-radius: 8px;
-        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
       }
+
+      .container {
+        max-width: 500px;
+        width: 100%;
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+      }
+
+      .container:hover {
+        transform: translateY(-5px);
+      }
+
       h1 {
         text-align: center;
+        font-family: "Montserrat", sans-serif;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
+
+      p {
+        text-align: center;
+        font-size: 1.1rem;
+        margin-bottom: 40px;
+        color: #555;
+      }
+
+      .examples-grid {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .card {
+        background-color: #fafafa;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        text-align: center;
+        transition: box-shadow 0.3s ease, transform 0.3s ease;
+        margin: 10px;
+      }
+
+      .card:hover {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transform: translateY(-5px);
+      }
+
+      .card h2 {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1.5rem;
+        margin-bottom: 15px;
         color: #444;
       }
-      ul {
-        list-style-type: none;
-        padding: 0;
-      }
-      li {
-        padding: 10px 0;
-        font-size: 18px;
-      }
-      a {
-        color: #007bff;
+
+      .card a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 25px;
         text-decoration: none;
+        font-weight: 500;
+        transition: background-color 0.3s ease, transform 0.3s ease;
       }
-      a:hover {
-        text-decoration: underline;
+
+      .card a i {
+        margin-right: 8px;
       }
-      .example {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+
+      .card a:hover {
+        background-color: #0056b3;
+        transform: scale(1.05);
       }
-      .example-description {
-        margin-right: 10px;
+
+      /* Responsive adjustments */
+      @media (max-width: 600px) {
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 2rem;
+        }
+
+        .card h2 {
+          font-size: 1.3rem;
+        }
       }
     </style>
   </head>
@@ -56,20 +135,26 @@
     <div class="container">
       <h1>WebJsx Examples</h1>
       <p>Explore the following WebJsx examples:</p>
-      <ul>
-        <li class="example">
-          <span class="example-description">Todos Example:</span>
-          <a href="./html/todos.html">View Todos</a>
-        </li>
-        <li class="example">
-          <span class="example-description">Dashboard Example:</span>
-          <a href="./html/dashboard.html">View Dashboard</a>
-        </li>
-        <li class="example">
-          <span class="example-description">Rotten Tomatoes Example:</span>
-          <a href="./html/tomatoes.html">View Rotten Tomatoes</a>
-        </li>
-      </ul>
+      <div class="examples-grid">
+        <div class="card">
+          <h2>Todos Example</h2>
+          <a href="./html/todos.html"
+            ><i class="fas fa-tasks"></i> View Todos</a
+          >
+        </div>
+        <div class="card">
+          <h2>Dashboard Example</h2>
+          <a href="./html/dashboard.html"
+            ><i class="fas fa-tachometer-alt"></i> View Dashboard</a
+          >
+        </div>
+        <div class="card">
+          <h2>Rotten Tomatoes Example</h2>
+          <a href="./html/tomatoes.html"
+            ><i class="fas fa-film"></i> View Rotten Tomatoes</a
+          >
+        </div>
+      </div>
     </div>
   </body>
 </html>
