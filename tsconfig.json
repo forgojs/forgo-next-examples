@@ -11,9 +11,7 @@
     "strict": true,
     "jsx": "react",
     "jsxFactory": "webjsx.createElement",
-    "jsxFragmentFactory": "webjsx.Fragment",
-    "allowSyntheticDefaultImports": true,
+    "jsxFragmentFactory": "webjsx.Fragment"
   },
-  "include": ["./src/**/*"],
-  "exclude": ["./.eslintrc.js"]
+  "include": ["./src/**/*"]
 }

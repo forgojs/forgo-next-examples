@@ -2,8 +2,9 @@
   "name": "webjsx-examples",
   "private": true,
   "dependencies": {
-    "webjsx": "^0.0.11",
-    "http-server": "^14.1.1"
+    "bloom-router": "^0.0.4",
+    "http-server": "^14.1.1",
+    "webjsx": "^0.0.21"
   },
   "type": "module",
   "scripts": {
